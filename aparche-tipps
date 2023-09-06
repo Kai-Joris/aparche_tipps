@@ -1,0 +1,18 @@
+path for configuration, which cann enable the web site index.php:
+sudo -i
+-> cd /etc/apache2/sites-available
+-> vi example.conf
+-><VirtualHost *:80>
+    <Directory /var/www/family-joris/>
+        Options Indexes FollowSymLinks
+        AllowOverride None
+        Require all granted
+    </Directory>
+    DocumentRoot /var/www/family-joris
+</VirtualHost>
+-> :wq
+->a2ensite <site>
+->a2dissite <site>
+->sudo service apache2 restart
+->https://www.linode.com/community/questions/311/how-do-i-enabledisable-a-website-hosted-with-apache
+
